@@ -12,7 +12,9 @@ class SubVal(sublime_plugin.EventListener):
 
     def is_subtitle_file(self):
         file_extension = self.get_file_extension()
-        return file_extension == 'srt' or file_extension == 'txt'
+        # Since build 4169 it started lagging on .txt files
+        # return file_extension == 'srt' or file_extension == 'txt'
+        return file_extension == 'srt'
 
     def get_file_extension(self):
         file_name = self.view.file_name()
